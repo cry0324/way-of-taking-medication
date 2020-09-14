@@ -1,0 +1,77 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-GB": {
+          "summary": "In order to remember to take your medication, set a reminder for user to take medication by trigger event",
+          "examplePhrases": [
+            "Alexa open way of taking medication"
+          ],
+          "keywords": [
+            "habit",
+            "formation",
+            "remember",
+            "medication",
+            "reminder"
+          ],
+          "name": "way of taking medication",
+          "description": "User can decide to set only one reminder, which include medication, trigger event and trigger event time. Trigger event is an existing habit and can be used to remember new habits, such as eating breakfast or brushing teeth. For example, \"please remind me to take hypotensor after breakfast at 10 am\". This skill can set only one specific reminder for user, which can help user to form habit and remember to take medication as soon as possible. And an hour after the trigger event time, the skill will ask the user if user take a pill after the trigger event. Thus, two reminders will be displayed in reminder section, one to remind the user to take the medicine after triggering the event, and the other to ask the user if he has finished. In addition, after the user has set up a reminder, if user opens the skill again, Alexa will ask user the same question (\"Did you take hypotensor after eating breakfast?\"). If user answer \"I did, \" the reminder will be retained. If user answer \"not yet\", the alexa will ask the user if he or she would like to change the medication reminder. And the reminder will be automatically deleted and the user can reset a more appropriate and memorable reminder if user say \u0027yes\u0027. And the reminder can be deleted by user.",
+          "smallIconUri": "file://assets/images/en-GB_smallIconUri.png",
+          "updatesDescription": "The skill was developed primarily to meet the requirements of the elderly. User can input their medication, trigger event and trigger event time by voice, which could save the elderly from the hassle of using a mobile phone. Under the influence of the COVID-19, in particular, because almost everyone needs self-isolation, older people have no children or other young people to care for them and remind them to take their medication regularly. So more and more older people are gradually accustomed to relying on other people or other technologies rather than actually remembering to take their medicine. So given the current state of the epidemic, this skill aims to support older people in remembering the important thing about taking medication, rather than relying on other people or other destabilizing factors such as technology.",
+          "largeIconUri": "file://assets/images/en-GB_largeIconUri.png"
+        }
+      },
+      "automaticDistribution": {
+        "isActive": false
+      },
+      "isAvailableWorldwide": false,
+      "testingInstructions": "student project university of bristol",
+      "category": "HEALTH_AND_FITNESS",
+      "distributionMode": "PUBLIC",
+      "distributionCountries": [
+        "GB"
+      ]
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:773514435600:function:525156e7-3dbf-4074-83bd-2cc386ef1145:Release_0"
+        },
+        "interfaces": [],
+        "regions": {
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:773514435600:function:525156e7-3dbf-4074-83bd-2cc386ef1145:Release_0"
+            }
+          },
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:773514435600:function:525156e7-3dbf-4074-83bd-2cc386ef1145:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:773514435600:function:525156e7-3dbf-4074-83bd-2cc386ef1145:Release_0"
+            }
+          }
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "permissions": [
+      {
+        "name": "alexa::alerts:reminders:skill:readwrite"
+      }
+    ],
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "locales": {
+        "en-GB": {}
+      },
+      "containsAds": false,
+      "isExportCompliant": true,
+      "isChildDirected": false,
+      "usesPersonalInfo": false
+    }
+  }
+}
