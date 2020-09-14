@@ -1,0 +1,251 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "way of taking medication",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "EventBasedReminderIntent",
+          "slots": [
+            {
+              "name": "medication",
+              "type": "medicine"
+            },
+            {
+              "name": "trigger_event",
+              "type": "event"
+            },
+            {
+              "name": "trigger_event_time",
+              "type": "AMAZON.TIME"
+            }
+          ],
+          "samples": [
+            "turn on reminder for eating {medication} after {trigger_event} at {trigger_event_time}",
+            "turn on reminder for taking {medication} after {trigger_event} at {trigger_event_time}",
+            "set reminder for eating {medication} after {trigger_event} at {trigger_event_time}",
+            "set reminder for taking {medication} after {trigger_event} at {trigger_event_time}",
+            "create reminder for eating {medication} after {trigger_event} at {trigger_event_time}",
+            "create reminder for taking {medication} after {trigger_event} at {trigger_event_time}",
+            "turn on the reminder for eating {medication} after {trigger_event} at {trigger_event_time}",
+            "turn on the reminder for taking {medication} after {trigger_event} at {trigger_event_time}",
+            "set the reminder for eating {medication} after {trigger_event} at {trigger_event_time}",
+            "set the reminder for taking {medication} after {trigger_event} at {trigger_event_time}",
+            "set {trigger_event_time} reminder for eating {medication} after {trigger_event}",
+            "set {trigger_event_time} reminder for taking after {trigger_event}",
+            "add {trigger_event_time} reminder for eating {medication} after {trigger_event}",
+            "add {trigger_event_time} reminder for taking {medication} after {trigger_event}",
+            "create {trigger_event_time} reminder for eating {medication} after {trigger_event}",
+            "create {trigger_event_time} reminder for taking {medication} after {trigger_event}",
+            "turn on {trigger_event_time} reminder for eating {medication} after {trigger_event}",
+            "turn on {trigger_event_time} reminder for taking {medication} after {trigger_event}",
+            "please remind me to eat {medication} after {trigger_event} at {trigger_event_time}",
+            "please remind me to take {medication} after {trigger_event} at {trigger_event_time}",
+            "remind me to take {medication} after {trigger_event} at {trigger_event_time}",
+            "remind me to eat {medication} after {trigger_event} at {trigger_event_time}",
+            "take {medication} after {trigger_event} at {trigger_event_time}",
+            "eat {medication} after {trigger_event} at {trigger_event_time}"
+          ]
+        },
+        {
+          "name": "NotYetIntent",
+          "slots": [],
+          "samples": [
+            "not yet"
+          ]
+        },
+        {
+          "name": "IDidIntent",
+          "slots": [],
+          "samples": [
+            "I did"
+          ]
+        },
+        {
+          "name": "DeleteReminderIntent",
+          "slots": [
+            {
+              "name": "reminder",
+              "type": "event"
+            }
+          ],
+          "samples": [
+            "Please delete {reminder}",
+            "Delete {reminder}",
+            "I decide to delete {reminder}",
+            "I want to delete {reminder}"
+          ]
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": [
+            "sounds good"
+          ]
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": [
+            "I change my mind"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "medicine"
+              }
+            }
+          ],
+          "name": "medicine"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "event"
+              }
+            }
+          ],
+          "name": "event"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "EventBasedReminderIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "medication",
+              "type": "medicine",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.161858059447.407256860869"
+              }
+            },
+            {
+              "name": "trigger_event",
+              "type": "event",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.161858059447.499130249144"
+              }
+            },
+            {
+              "name": "trigger_event_time",
+              "type": "AMAZON.TIME",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.161858059447.1284387888415"
+              }
+            }
+          ]
+        },
+        {
+          "name": "DeleteReminderIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.586312400273"
+          },
+          "slots": [
+            {
+              "name": "reminder",
+              "type": "event",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        },
+        {
+          "name": "NotYetIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.1219271711469"
+          },
+          "slots": []
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.161858059447.407256860869",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What kind of medication should I remind you to take?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.161858059447.499130249144",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what trigger event, such as breakfast or brushing your teeth, do you want to associate with the reminder?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.161858059447.1284387888415",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What time do you want to take your hypotensor?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.1236164419692",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "would you like a reminder at {trigger_event_time} to take {medication} after {trigger_event} ?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.586312400273",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "would you like to delete {reminder} ?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.1219271711469",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Would you like to change your medication reminder?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "9"
+}
